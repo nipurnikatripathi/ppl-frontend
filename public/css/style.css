@@ -612,3 +612,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb02f', end
 .footr_rgt ul li:last-child {
 	margin-right: 0%;
 }
+@media screen and (max-width: 200px) {
+	.modal-content {
+	  background-color: black;
+	  color : white
+	  
+	}
+  } 
+  

@@ -1,0 +1,87 @@
+/*App.css*/
+/* MODAL */
+/* Background effect. It covers the entire site */
+.popupOutside {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Overlay effect: translucent background: black w/ partial opacity */
+    z-index: 1; /* Overlay effect: positioned over other containers */
+    width: 100%; /* Full width */
+    height: 100%; /*Full height */
+    position: absolute; /* Fix position on the top-left corner*/
+    top: 0;
+    left: 0;
+    /* margin-left: 20%; */
+    /* margin-top: 10%; */
+    /* display : flex; */
+    /* justify-content: center; */
+    overflow: auto; /* Enable scroll if needed */
+    padding: 10px; /* Location of the content container */
+    background-color: rgba(54, 25, 25, 0.8);
+
+
+
+}
+/* Modal content */
+.popupInside {
+    background-color: rgb(255, 255, 204)    ;
+    /* width: 70%; Width in proportion to its parent container */
+    /* max-width: 640px; Max width where it stops expanding */
+    /* height: 70%; Height in proportion to its parent container */
+    margin: auto; /* Auto margin according to the element width */
+    padding: 5%;
+    width: 50%;
+    height: 50%;
+    border: 1px solid black;
+    border-radius: 20px; /* Optional. Rounds container corners */
+    position: relative;
+}
+/* Close button */
+.close {
+   color: #aaaaaa;
+   float: right; /* Positioned to the right of the parent container whichever size it is */
+   font-size: 1000px;
+   font-weight: bolder;
+}
+.close:hover, 
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.closeSign {
+    margin-left: 95%;
+}
+
+.enterCategoryText {
+    display : flex;
+    font-size: 50px;
+    margin-top: -5%;
+    justify-content : center;
+    align-items : center;
+    /* padding-top : -5%; */
+    position : relative
+    /* //  alignItems : center, */
+    /* //  position : fixed */
+  }
+.submitStyle {
+    display: flex;
+    justify-content : center;
+    align-items : center;
+    margin-top: 8%;
+    /* padding: 10% */
+
+  }
+  .box {
+    display : "flex";
+    justify-content : center;
+    align-items : center;
+    margin-left: 30%;
+    margin-top: 5%;
+
+    /* position : relative; */
+  }
+  .my-body-noscroll-class {
+    overflow: hidden;
+}
+
