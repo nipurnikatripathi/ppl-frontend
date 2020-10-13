@@ -1,0 +1,4 @@
+export const  CATEGORY_ARRAY = 'CATEGORY_ARRAY'
+export const  UPLOAD_POST_ARRAY = 'UPLOAD_POST_ARRAY'
+export const SINGLE_POST = 'SINGLE_POST'
+

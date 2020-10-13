@@ -6586,8 +6586,8 @@ a.badge:focus {
   float: right;
   width: 21%;
   color: white;
-  /* margin-right: -50px; */
-
+  margin-right: 30px;
+  margin-top: -18px;
 }
 .image_div {
   float: left;
@@ -6603,12 +6603,12 @@ a.badge:focus {
   background-image: url(../images/arw2.png);
   width: 37%;
   color: #fff;
-  margin-top: 3%;
   font-size: 30px;
   text-align: left;
   background-repeat: no-repeat;
   background-position: right;
-  margin-right: -60px;
+  margin-top: -13%;
+  margin-right: -91px;
 }
 .container {
   width: 80%;
@@ -8069,4 +8069,54 @@ a.badge:focus {
 .view_div a {
   color: #202226;
   text-align: center;
+}
+
+.textarea {
+  width: 99%;
+  height: 50px;
+  margin-top: 5px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  /* background-color: black; */
+  font-size: 16px;
+  resize: none;
+}
+
+.display_last_comment {
+  display: flex;
+  width: 95.5%;
+  margin-top: 5px;
+  padding: 10px;
+  flex-direction: row;
+  /* margin-left: 20px; */
+  justify-content: space-between; 
+}
+
+.add_comments {
+  /* float: right; */
+  /* display: flex;
+  justify-content: space-between; */
+  /* background: #f3891f; */
+  /* margin-left: 80%; */
+  /* margin-top: -6%; */
+}
+
+.ulStyle {
+  padding-top: 1%; 
+  display: flex;
+  margin-right: 4%;
+  /* justify-content: flex-end; */
+  /* justify-content: space-between; */
+  width: 95%;
+}
+.divStyleComment {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1%;
+  margin-right: 1%;
+  /* padding: %; */
+  /* align-items: flex-end; */
+  /* flex-wrap: wrap; */
 }

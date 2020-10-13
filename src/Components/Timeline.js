@@ -1,6 +1,4 @@
 import React from "react";
-import Register from "./Register";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Modal from "./UpdateCategoryPopUp";
 import Axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -61,15 +59,6 @@ class Timeline extends React.Component {
         console.log("error received");
       });
 
-    //fetch(`http://localhost:8081/getCategory`)
-    // .then((response) => response.json())
-    // .then((data) => {
-    //   console.log("This is your category in timeline", data);
-    //   console.log("id , category", id, category);
-
-    //   if(data[0].categoryName === category)
-    //     console.log("data deleted");
-    // });
   };
 
   // method - handleLogout - to handle the logout button
@@ -88,7 +77,6 @@ class Timeline extends React.Component {
 
         this.setState({ categoryArray: data });
       });
-    // console.log("categoryArray: ", this.state.categoryArray);
 
     let userName = localStorage.getItem("user");
     console.log("userName in component did mount :", userName);

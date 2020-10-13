@@ -1,49 +1,27 @@
-// import React from 'react';
-// class Modal extends React.Component {
-
 import React from "react";
-import SubmitButtonCategory from "./SubmitButtonCategory"; // importing SubmitButtonCategory component
 import "./Popup.css";
+import SubmitButtonCategory from "./SubmitButtonCategory";
 
-// functional component Modal
 const Modal = (props) => {
+  const { displayModal } = props;
   const divStyleModel = {
-    display: props.displayModal ? "block" : "none",
+    display: displayModal ? "block" : "none",
   };
   function closeModal(e) {
+    const { closeModal } = props;
     e.stopPropagation();
-    props.closeModal();
+    closeModal();
     console.log("function called");
   }
   return (
-    <div
-      className="popupOutside"
-      //  onClick={ closeModal }
-      style={divStyleModel}
-    >
-      {/* <div className="popupInside"> */}
-
-      {/* //  onClick={ e => e.stopPropagation() }  */}
-
-      {/* <span className="submitButton">
-          <button>Submit </button>
-        </span> */}
+    <div className="popupOutside" style={divStyleModel}>
       <div className="popupInside">
-        {/* rendering SubmitButtonCategory */}
-        {/* props : close - to close popUp  and  categoryUpdateFunction - to update category */}
         <span className="closeSign" onClick={closeModal}>
           &times;
         </span>
-        <SubmitButtonCategory
-          close={props.closeModal}
-          categoryUpdateFunction={props.categoryUpdateFunction}
-        />
-        {/* <span className="close" onClick={closeModal}>
-          &times;
-        </span> */}
+        <SubmitButtonCategory close={props.closeModal} />
       </div>
     </div>
   );
 };
 export default Modal;
-//exporting Modal component

@@ -1,13 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
-import Axios from "axios";
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.handleLogout = this.handleLogout.bind(this);
-    this.state = { userLoggedIn: false, username: "" };
   }
 
   // method - handleLogout - to handle the logout button
@@ -18,31 +15,11 @@ class Header extends React.Component {
     localStorage.clear(); // clear the local storage
     this.props.history.push("/login"); // forcefully redirect to login page
   };
-  componentDidMount() {
-    let userName = localStorage.getItem("user");
-    console.log("userName in component did mount of Header:", userName);
-
-    // post call at addusername API
-    Axios.post(`http://localhost:8081/addusername`, { userEmail: userName }) // send user object to backend
-      .then((response) => {
-        this.setState({
-          username: response.data[0].username,
-        });
-
-        console.log(
-          "inside addusername api in timeline",
-          response.data[0].username
-        );
-      }) // if no response received
-      .catch(function (error) {
-        console.log("something is wrong inside addusername api in timeline!");
-      });
-  }
 
   render() {
-    console.log("this.props.history",this.props.history)
-    console.log("props in header:", this.props);
-    console.log("userLogged in from timeline", this.props.userLoggedIn);
+    const { userLoggedIn, userName } = this.props;
+    console.log("userLogged in from timeline", { userLoggedIn });
+
     return (
       <div>
         <div className="navbar navbar-inverse navbar-fixed-top">
@@ -158,43 +135,22 @@ class Header extends React.Component {
               <img src="images/flag.png" />
             </div>
             <input type="text" placeholder="Search" className="txt_box" />
-            <div className="msg_box">
-              <a href="#">
-                <span className="msg_count">100</span>
-              </a>
-            </div>
             <div className="info_div">
-              {this.props.userLoggedin ? (
+              {/* if userLoggedIn - true : display username and logout button OR false - display null  */}
+              {userLoggedIn ? (
                 <div>
                   <div className="info_div1">
                     {" "}
                     <a onClick={this.handleLogout}>
-                      <FontAwesomeIcon
-                        icon={faSignOutAlt}
-                        //  size="1x"
-                        color="white"
-                      />
+                      <FontAwesomeIcon icon={faSignOutAlt} color="white" />
                     </a>
-                    {/* <img src="images/pic.png" />{" "} */}
                   </div>
                   <div className="info_div">
                     {" "}
-                    <h6>{this.state.username}</h6>
+                    <h6>{userName}</h6>
                   </div>
                 </div>
               ) : null}
-              <div className="">
-                {/* <h6>{this.state.username}</h6> */}
-                {/* Logout button */}
-                {/* <a style={logoStyle}  */}
-                {/* <a onClick={this.handleLogout}>
-                  <FontAwesomeIcon
-                    icon={faSignOutAlt}
-                    size="lg"
-                    color="black"
-                  />
-                </a> */}
-              </div>
             </div>
           </div>
         </div>
@@ -202,5 +158,4 @@ class Header extends React.Component {
     );
   }
 }
-// exporting the Registration Component
 export default Header;
